@@ -1,0 +1,51 @@
+.lmsf__cont{
+background-color: inherit;
+background-image: url('../../../IMG/bg4.jpg');
+background-size: cover;
+background-repeat: no-repeat;
+height: 100vh;
+color: #fff !important;
+
+.dim__form{
+      width: 360px;
+      margin: 70px auto; 
+}
+
+.mg__1em{
+      margin: 1em;
+}
+.btw__flex{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      
+}
+
+}
+
+.mg__left{
+      margin-left: .5em;
+}
+
+.mg__2em{
+      margin-bottom: 2em;
+}
+.mgTop__1em{
+
+      margin-top: 1em;
+}
+
+.link{
+      text-decoration: none;
+      color: inherit;
+}
+.link:hover{
+      text-decoration: underline;
+}
+
+@media (max-width: 576px) {
+      .dim__form{
+            width: 100%;
+            padding: 1em;
+      }
+}

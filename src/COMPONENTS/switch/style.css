@@ -1,0 +1,60 @@
+
+.center__flex{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.span__rem{
+      margin-left: .5em;
+}
+
+
+.toggler-wrapper {
+  display: block;
+  width: 2em;
+  height: 1em;
+  cursor: pointer;
+  position: relative;
+}
+
+.toggler-wrapper input[type="checkbox"] {
+  display: none;
+}
+
+.toggler-wrapper input[type="checkbox"]:checked+.toggler-slider {
+  background-color: #44cc66;
+}
+
+.toggler-wrapper .toggler-slider {
+  background-color: rgba(255,255,255,0.4);
+  position: absolute;
+  border-radius: 100px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+.toggler-wrapper .toggler-knob {
+  position: absolute;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+/*Style 1*/
+
+.toggler-wrapper.style-1 input[type="checkbox"]:checked+.toggler-slider .toggler-knob {
+      left: calc(100% - .8em);
+    }
+    
+    .toggler-wrapper.style-1 .toggler-knob {
+      width: calc(1em - 6px);
+      height: calc(1em - 6px);
+      border-radius: 50%;
+      left: 3px;
+      top: 3px;
+      background-color: #fff;
+    }
+    

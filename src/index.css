@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,500;1,700;1,800&display=swap');
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Alegreya Sans SC', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #383340 !important;
+ 
+}
+
+.link{
+  text-decoration: none;
+}
+
+.css-ahj2mt-MuiTypography-root {
+ 
+  color: #383340 !important;
+  font-family: 'Alegreya Sans SC', sans-serif !important;
+}
+
+.bold{
+  font-weight: 600 !important;
+}
+
+.txt__ellipsis{
+  width: 100% !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  text-transform: capitalize ;
+}
+
+/* @media (max-width: 1400px) { */
+
+  .container__fluid{
+    margin: 0 auto !important;
+    max-width: 1400px !important;
+  }
+/* }  */
+  

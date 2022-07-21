@@ -1,0 +1,105 @@
+.sub__cont {
+  padding: 1em;
+}
+
+.kont {
+  background: #111 !important;
+  color: #fff !important;
+  min-height: 100vh;
+}
+
+.csp__cont {
+  margin: 70px 15%;
+}
+.csp__cont .ul__ {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.csp__cont .icon__spar {
+  color: #d32f2f;
+  margin-right: 1em;
+}
+
+.loskie__ {
+  padding: 1em;
+}
+.loskie__ h2 {
+  margin-bottom: 0.6em;
+}
+
+.picolo {
+  text-align: center;
+  margin-top: 1em;
+}
+
+.csp__table {
+  width: 100%;
+  display: flex;
+}
+.csp__table .plans__ {
+  height: 100px;
+  width: 100px;
+  background-color: rgba(211, 47, 47, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  position: relative;
+}
+.csp__table .plans__:after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  background-color: rgba(211, 47, 47, 0.7);
+  bottom: -4px;
+  z-index: -1;
+  transform: rotate(45deg);
+}
+.csp__table .body__ {
+  text-align: center !important;
+  padding: 1em !important;
+}
+.csp__table .strong__ {
+  font-weight: bold;
+  text-align: left !important;
+  white-space: nowrap !important;
+}
+.csp__table .strong__p {
+  opacity: 0;
+}
+
+.each__cont {
+  transition: all 0.5s ease;
+  margin: 1em;
+  flex-grow: 0;
+}
+
+.each__cont:hover {
+  cursor: pointer;
+}
+.each__cont:hover .body__ {
+  color: #d32f2f;
+}
+.each__cont:hover .plans__, .each__cont:hover .plans__:after {
+  background-color: rgb(211, 47, 47);
+  color: #fff !important;
+}
+
+.mg__select {
+  margin: 1em;
+  flex-grow: 3;
+}
+
+@media (max-width: 768px) {
+  .table__cont {
+    overflow-x: scroll;
+  }
+  .table__cont::-webkit-scrollbar {
+    display: none;
+  }
+  .csp__cont {
+    margin: 50px 2%;
+  }
+}/*# sourceMappingURL=style.css.map */

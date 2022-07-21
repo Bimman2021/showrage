@@ -1,0 +1,111 @@
+.sub__cont{
+      padding: 1em;
+    
+}
+
+.kont{
+      background: #111 !important;
+      color: #fff !important;
+      min-height: 100vh;
+}
+.csp__cont{
+      margin: 70px 15%;
+    
+
+      .ul__{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+      }
+
+      .icon__spar{
+            color: #d32f2f;
+            margin-right: 1em;
+      }
+}
+
+.loskie__{
+      padding: 1em;
+      h2{
+            margin-bottom: .6em;
+      }
+}
+
+.picolo{
+      text-align: center;
+      margin-top: 1em;
+}
+.csp__table{
+      width: 100%;
+      display: flex;
+      //justify-content: space-evenly;
+      .plans__{
+            height: 100px;
+            width: 100px;
+            background-color: rgba(211,47,47,0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            position: relative;
+      }
+      .plans__:after{
+            content: '';
+            width: 8px;
+            height: 8px;
+            position: absolute;
+            background-color: rgba(211,47,47,0.7);
+            bottom: -4px;
+            z-index: -1;
+            transform: rotate(45deg);
+      }
+      
+      .body__{
+            text-align: center !important;
+            padding: 1em !important;
+           
+      }
+      .strong__{
+            font-weight: bold;
+            text-align: left !important;
+            white-space: nowrap !important;
+      }
+      .strong__p{
+           
+           opacity:0 ;
+      }
+}
+.each__cont{
+      transition: all .5s ease;
+      margin: 1em;
+      flex-grow: 0;
+}
+.each__cont:hover{
+      cursor: pointer;
+    
+      .body__{
+            color: #d32f2f;
+      }
+      .plans__, .plans__:after{
+            background-color: rgba(211,47,47,1);
+            color: #fff !important;
+      }
+}
+
+.mg__select{
+      margin: 1em;
+      flex-grow: 3;
+}
+@media (max-width: 768px) {
+      .table__cont{
+            overflow-x: scroll;
+      }
+
+      .table__cont::-webkit-scrollbar{
+            display: none;
+      }
+      
+      .csp__cont{
+            margin: 50px 2%;
+      }
+}

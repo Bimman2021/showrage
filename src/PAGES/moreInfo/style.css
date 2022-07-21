@@ -1,0 +1,57 @@
+.info__cont {
+  margin: 0 5%;
+}
+.info__cont .flex {
+  display: flex;
+}
+.info__cont .xuyua0, .info__cont .xml {
+  padding: 1em;
+  width: 50%;
+}
+.info__cont .xuyua0 h1, .info__cont .xml h1 {
+  padding-top: 0;
+  margin-bottom: 1rem;
+}
+.info__cont .xuyua0 .fxt__img, .info__cont .xml .fxt__img {
+  width: 100%;
+  height: 390px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.info__cont .icon__cont {
+  display: inline-block;
+  text-align: center;
+  font-size: 0.7rem;
+  cursor: pointer;
+  padding: 1em;
+}
+.info__cont .icon__cont .nice__icon {
+  font-size: 1.5rem;
+}
+
+.pad__100 {
+  padding: 100px 0;
+}
+
+.off__screen {
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+@media (max-width: 576px) {
+  .info__cont {
+    margin: 0;
+  }
+  .info__cont .flex {
+    flex-wrap: wrap;
+  }
+  .info__cont .xuyua0, .info__cont .xml {
+    width: 100%;
+  }
+}/*# sourceMappingURL=style.css.map */
