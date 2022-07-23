@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Nav from '../../COMPONENTS/Nav/Nav'
+import Navbar from '../../COMPONENTS/Nav/Navbar'
 import Box from '@mui/material/Box';
 import img from '../../IMG/wc.jpg'
 import Tab from '@mui/material/Tab';
@@ -27,8 +27,8 @@ const Mylist = () => {
       };
 
       return (
-            <div className='mg__top'>
-                  <Nav />
+            <div className=''>
+                  <Navbar />
 
 
                   <TabContext value={value}>

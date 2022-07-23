@@ -1,13 +1,13 @@
 .cont__nav {
-  height: 70px;
   background-color: rgba(0, 0, 0, 0.8);
   color: #fff !important;
+  width: 100%;
 }
 .cont__nav .nav__flex {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1em;
+  padding: 1.2em 1em;
 }
 .cont__nav .nav__flex .ul__ca {
   list-style: none;
@@ -47,10 +47,6 @@
   }
   .shownow {
     display: none;
-  }
-  .cont__nav {
-    margin-bottom: 1em;
-    height: 60px;
   }
   .cont__nav .nav__flex {
     display: flex;

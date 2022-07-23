@@ -6,7 +6,7 @@ import Nav from "../../COMPONENTS/Nav/Nav";
 import Navbar from "../../COMPONENTS/Nav/Navbar";
 import Footer from "../../COMPONENTS/footer/footer";
 //import Section2 from "../../COMPONENTS/section/section2";
-import { Section3 } from '../index/Index'
+//import { Section3 } from '../index/Index'
 function Home() {
       return (
             <div className="Home" style={{ overflowX: 'hidden' }}>
@@ -24,7 +24,7 @@ function Home() {
                   /> */}
                   <Row title={"Comedy Movies"} movie_request={requests.fetchComedyMovies} />
                   <Row title={"Trending Now"} movie_request={requests.fetchTrending} />
-                  <Section3 />
+
                   {/*   <Row title={"Top Rated"} movie_request={requests.fetchTopRated} />
                   <Row title={"Action Movies"} movie_request={requests.fetchActionMovies} />
                   

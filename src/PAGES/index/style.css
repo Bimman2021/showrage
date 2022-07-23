@@ -41,7 +41,7 @@
 }
 
 .border__top {
-  border-top: 8px solid #222;
+  border-top: 8px solid #F0EEF5;
 }
 
 .bgClr {
@@ -203,8 +203,22 @@
   filter: grayscale(50%);
 }
 
+.flex__center {
+  height: 100%;
+  align-items: center;
+}
+
 .col {
   flex: 1 1;
+}
+
+.bg {
+  background-color: #F0EEF5;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 87%, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 87%, 0 100%);
+  padding-top: 40px;
+  height: 90vh;
+  line-height: 1.7;
 }
 
 .pad__side-15 {
@@ -240,7 +254,10 @@
 
 .faq__section {
   background-color: #F0EEF5;
+  -webkit-clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 90%);
+          clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 90%);
   padding: 100px 0;
+  margin: 50px 0;
 }
 
 @media (max-width: 1200px) {

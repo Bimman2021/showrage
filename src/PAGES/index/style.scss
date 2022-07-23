@@ -1,4 +1,5 @@
-$dark_bg : #18171fe0;;
+$dark_bg : #18171fe0;
+$grey_bg : #F0EEF5;
 
 
 .head__sect{
@@ -42,7 +43,7 @@ $dark_bg : #18171fe0;;
       
 }
 .border__top{
-      border-top: 8px solid #222;
+      border-top: 8px solid $grey_bg;
       
 
 }
@@ -226,10 +227,23 @@ $dark_bg : #18171fe0;;
       
 }
 
+.flex__center{
+      height: 100%;
+      align-items: center;
+}
 
 .col{
       flex: 1 1;
 }
+
+.bg{
+      background-color: $grey_bg;
+      clip-path: polygon(0 0, 100% 0, 100% 87%, 0 100%);
+      padding-top: 40px;
+      height: 90vh;
+      line-height: 1.7;
+}
+
 .pad__side-15{
       padding: 0 15px;
 }
@@ -259,8 +273,10 @@ $dark_bg : #18171fe0;;
 }
 
 .faq__section{
-      background-color: #F0EEF5;
+      background-color: $grey_bg;
+      clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 90%);
       padding: 100px 0;
+      margin: 50px 0;
 }
 
 @media (max-width: 1200px){

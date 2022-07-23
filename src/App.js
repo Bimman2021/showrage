@@ -14,6 +14,7 @@ import Mylist from "./PAGES/mylist/list";
 import Subscribe from "./PAGES/subscribe";
 import Season from "./PAGES/season/season"
 import Profile from "./PAGES/profile/profile";
+import Play from "./PAGES/playPage/play";
 //import Moviepage from "./PAGES/moviePage/moviePage";
 import Test from "./test/test";
 import { AuthProvider } from "./AUTH";
@@ -31,6 +32,7 @@ function App() {
       <Route path="/Test" element={<Test />} />
       <Route path="/season" element={<Season />} />
       <Route path="/forgot" element={<Forgot />} />
+      <Route path="/play" element={<Play />} />
       <Route
             path="/home"
             element={

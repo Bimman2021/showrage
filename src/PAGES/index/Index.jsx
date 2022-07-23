@@ -4,54 +4,68 @@ import React from "react"
 import Footer from "../../COMPONENTS/footer/footer"
 import hero from '../../IMG/hero.png'
 import heroD from '../../IMG/hero_mobile.png'
+import PillBtn from "../../COMPONENTS/Button/PillBtn"
 import { Button } from "@mui/material"
 import deviceImg from '../../IMG/device.png'
 import SimpleAccordion from '../../COMPONENTS/accordion/accordion'
-import Faq from "../faq/Faq"
 import './style.css'
-import img1 from '../../IMG/nickelodeon.png'
-import img2 from '../../IMG/kyknet.png'
-import img3 from '../../IMG/national_geo.png'
-import img4 from '../../IMG/hbo.png'
-import img5 from '../../IMG/supersport.png'
-import img6 from '../../IMG/bbc.png'
-import { Link, useNavigate } from 'react-router-dom'
+// import img1 from '../../IMG/nickelodeon.png'
+// import img2 from '../../IMG/kyknet.png'
+// import img3 from '../../IMG/national_geo.png'
+// import img4 from '../../IMG/hbo.png'
+// import img5 from '../../IMG/supersport.png'
+// import img6 from '../../IMG/bbc.png'
+// import { Link, useNavigate } from 'react-router-dom'
 
-export function Section3() {
+// export function Section3() {
 
-      return (
-            <section className="head__sect mgTop2em">
-                  <div className="border__top bgClr">
-                        <div className='container__fluid'>
+//       return (
+//             <section className="head__sect mgTop2em">
+//                   <div className="border__top bgClr">
+//                         <div className='container__fluid'>
 
-                              <div className='flex__m wrap__990'>
-                                    <div className="mgBtm__576">
-                                          <div className="bases__50">
-                                                <img src={deviceImg} alt='' width={'100%'} />
-                                          </div>
-                                    </div>
-                                    <div className="bases__2">
-                                          <h1>The return of Jenifa </h1>
-                                          <p className="p__me">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam nemo temporibus excepturi ad magnam animi? </p>
+//                               <div className='flex__m wrap__990'>
+//                                     <div className="mgBtm__576">
+//                                           <div className="bases__50">
+//                                                 <img src={deviceImg} alt='' width={'100%'} />
+//                                           </div>
+//                                     </div>
+//                                     <div className="bases__2">
+//                                           <h1>The return of Jenifa </h1>
+//                                           <p className="p__me">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam nemo temporibus excepturi ad magnam animi? </p>
 
-                                          <div style={{ marginTop: '2em' }}>
-                                                <Button variant="contained">
-                                                      play now
-                                                </Button>
-                                          </div>
-                                    </div>
+//                                           <div style={{ marginTop: '2em' }}>
+//                                                 <Button variant="contained">
+//                                                       play now
+//                                                 </Button>
+//                                           </div>
+//                                     </div>
 
-                              </div>
-                        </div>
-                  </div>
-            </section>
-      )
-}
+//                               </div>
+//                         </div>
+//                   </div>
+//             </section>
+//       )
+// }
 
 const Index = () => {
       return (
             <div>
-                  <Nav />
+                  <Navbar />
+                  <div className="bg">
+                        <div className="container flex__center">
+                              <div className="row flex__center">
+                                    <div className="col-4 pad__side-15">
+                                          <h1>welcome to showrage</h1>
+                                          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum harum, et suscipit explicabo laboriosam cumque reiciendis sed tenetur perferendis provident!</p>
+                                          <PillBtn text={'get started'} style={{ width: '40%' }} />
+                                    </div>
+                                    <div className="col pad__side-15">
+                                          <img src={deviceImg} alt='' width={'100%'} />
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
                   <div className="img__bg">
                         <div className="container">
                               <div className="row push">

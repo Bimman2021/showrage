@@ -39,6 +39,24 @@ export default function SimpleAccordion() {
           </Typography>
         </AccordionDetails>
       </Accordion>
+       {/* sections end */}
+        {/* sections */}
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel2a-content"
+          id="panel2a-header"
+        >
+          <Typography className='bold'>Can i delete my account </Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            malesuada lacus ex, sit amet blandit leo lobortis eget.
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+       {/* sections end */}
   
     </div>
   );

@@ -5,11 +5,11 @@ import '../style.css'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
-const PillBtn = ({ text, icon, loading }) => {
+const PillBtn = ({ text, icon, loading, style }) => {
       return (
             <div className='pill__cont'>
 
-                  <button className='pill__btn' disabled={loading ? true : false} >
+                  <button style={style} className='pill__btn' disabled={loading ? true : false} >
                         {icon && <div className='mg__right'>
                               icon
                         </div>}
