@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "../../REQUESTS/axios";
 import requests from "../../REQUESTS/requests";
+import { RWebShare } from "react-web-share";
 import YouTube from "react-youtube";
 import "./Banner.css";
 import Animation from '../animation/index'
@@ -52,6 +53,7 @@ const ModalComponent = ({ trailerUrl, des }) => {
                                 <br />
                                 more info
                           </Link>
+               
                     </div>
               </div>
         </div>
@@ -126,6 +128,18 @@ function Banner() {
          <div className="banner__buttons">
           <button onClick={() => setShowModal(true)} className="banner__button">Play</button>
           <button className="banner__button">Watch later</button>
+          
+          <RWebShare
+              data={{
+                text: "how to watch movies on showrage",
+                url: "http://showrage.com",
+                title: "showage intro",
+              }}
+              onClick={() => console.log("shared successfully!")}
+             >
+    
+              <button className="banner__button">Share 🔗</button>
+          </RWebShare>
         </div>
       </div>
       <div className="banner--fadeBottom" />

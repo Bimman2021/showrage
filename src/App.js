@@ -15,12 +15,27 @@ import Subscribe from "./PAGES/subscribe";
 import Season from "./PAGES/season/season"
 import Profile from "./PAGES/profile/profile";
 import Play from "./PAGES/playPage/play";
+import Verifyemail from "./PAGES/form/verifyEmail"
+import Success from "./PAGES/form/success/succes";
+import ValidateEmail from "./AUTH/authVerifyEmail";
+import Protected from "./AUTH/protected";
+
+//
+import isOnline from 'is-online';
+
 //import Moviepage from "./PAGES/moviePage/moviePage";
 import Test from "./test/test";
 import { AuthProvider } from "./AUTH";
 const Home = React.lazy(() => import("./PAGES/homepage/index"));
 
 function App() {
+  
+ const net = async() => {
+  console.log(await isOnline())
+};
+
+ ///setInterval(net,10000)
+
   return (
     <AuthProvider>
      <Routes>
@@ -33,14 +48,26 @@ function App() {
       <Route path="/season" element={<Season />} />
       <Route path="/forgot" element={<Forgot />} />
       <Route path="/play" element={<Play />} />
-      <Route
-            path="/home"
-            element={
-              <React.Suspense fallback={<Animation />}>
-                <Home />
-              </React.Suspense>
-            }
-          />
+      <Route path="/success" element={<Success />} />
+      <Route path="/verifyemail" element={
+          <ValidateEmail>
+            <Verifyemail />
+          </ValidateEmail>
+          }  
+      />
+    
+      {/* protected routes */}
+      <Route path="/en" element={<Protected/>} >
+          <Route
+                path="home"
+                element={
+                  <React.Suspense fallback={<Animation />}>
+                    <Home />
+                  </React.Suspense>
+                }
+              />
+      </Route>
+
       <Route path="/animation" element={<Animation />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />

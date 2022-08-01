@@ -6,35 +6,71 @@ import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PillBtn from '../../../COMPONENTS/Button/PillBtn'
 import Switch from '../../../COMPONENTS/switch/Switch'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../../../AUTH'
+import axios from '../../../REQUESTS/backend'
 import './style.css'
 
 const Login = () => {
       const [error, setError] = useState({})
+      const [serverError, setServerError] = useState('')
       const initialValue = { email: '', pass: '' }
       const [formvalue, setFormvalue] = useState(initialValue);
       const [loading, setLoading] = useState(false);
       const [isSubmit, setIsSubmit] = useState(false);
-      // const auth = useAuth();
-      // const navigate = useNavigate();
+      const auth = useAuth();
+      const navigate = useNavigate();
 
 
       //===
-      // const send = () => {
-      //       axios.post(url, {
-      //             action: 'login',
-      //             values: value
-      //       }).then(function (response) {
-      //             setLoading(false)
+      const send = () => {
+            const data = {
+                  method: 'POST',
+                  mode: 'no-cors',
+                  data: formvalue,
+                  headers: {
+                        'Access-Control-Allow-Origin': '*',
+                        'Content-Type': 'application/json',
+                  },
 
-      //       }).catch(function (error) {
-      //             console.log(error);
-      //       });
-      // }
+            }
+            axios('/account/login/', data)
+                  .then(function (response) {
+
+                        setLoading(false)
+                        if (response.data.message === 'incorrect') {
+                              setLoading(false)
+                              setServerError('email or password is incorrect')
+                        } else if (response.data.message === 'welcome') {
+                              setLoading(false)
+                              const data = response.data.data
+                              console.log(data)
+                              auth.setUser({
+                                    data
+                              })
+                              navigate('/en/home', { replace: true })
+                        } else if (response.data.message === 'verify mail') {
+                              auth.setVerifyCode({
+                                    vcode: response.data.verificationCode,
+                                    email: response.data.email
+                              })
+                              setLoading(false)
+                              navigate('/verifyemail', { replace: true })
+                        } else {
+                              setServerError('something went wrong! try again')
+                              setLoading(false)
+                        }
+                  })
+                  .catch(function (error) {
+
+                        setLoading(false)
+                        setServerError('something went wrong! try again')
+                  });
+      }
       //===
       const onChange = (e) => {
             const { name, value } = e.target;
-            setFormvalue({ ...formvalue, [name]: value });
+            setFormvalue({ ...formvalue, [name]: value.toLowerCase() });
             setError({ ...error, [name]: '' })
 
       }
@@ -42,7 +78,7 @@ const Login = () => {
       useEffect(() => {
             if (Object.keys(error).length === 0 && isSubmit) {
                   setLoading(true)
-                  // send()
+                  send()
             }
       }, [error, isSubmit])
 
@@ -77,6 +113,9 @@ const Login = () => {
                         <form action="" className='dim__form' autoComplete='off' onSubmit={submit} >
                               <div className='center__flex mg__2em'>
                                     <img src={logo} alt='' height={'auto'} width={'50px'} />
+                              </div>
+                              <div className='error'>
+                                    {serverError}
                               </div>
                               <Input
                                     required

@@ -10,7 +10,7 @@ import OffCanvas from '../../BOOTSTRAP/Offcanvas'
 function NavLinkss({ className }) {
       const location = useLocation().pathname
 
-      if (location === '/') {
+      if (location === '/' || location === '/login' || location === '/register') {
             return (
                   <ul className={`${className && className} ul__ca`} >
                         <li className='li__ca'>
@@ -58,7 +58,10 @@ const Navbar = () => {
 
                   <div className='cont__nav'>
                         <div className='nav__flex'>
-                              <div><span><i>Showrange</i></span></div>
+                              <div className="logo">
+                                    {/* <img src={require('../../IMG/logo.png')} width='100px' height={'auto'} alt="" /> */}
+                                    <h3><i>Show</i>Rage</h3>
+                              </div>
                               <div className='nav__part'>
 
                                     <FontAwesomeIcon icon={faBars} className='shown m__icon' onClick={() => setShowCanvas(true)} />

@@ -18,6 +18,18 @@
   height: 410px;
 }
 
+.in__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #383340;
+  color: #b2b4bf !important;
+}
+.in__nav i {
+  color: #fa5c61;
+}
+
 .mgTop2em {
   margin-top: 2em;
 }

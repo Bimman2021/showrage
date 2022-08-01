@@ -1,9 +1,14 @@
+$dark_bg : #18171fe0;
+$grey_bg : #F0EEF5;
+
+
 .lmsf__cont{
-background-color: inherit;
+background-color: #000;
 background-image: url('../../../IMG/bg4.jpg');
 background-size: cover;
 background-repeat: no-repeat;
 height: 100vh;
+min-height: 667px;
 color: #fff !important;
 
 .dim__form{
@@ -21,6 +26,9 @@ color: #fff !important;
       
 }
 
+}
+.kis8{
+      line-height: 1.7;
 }
 
 .mg__left{
@@ -42,6 +50,30 @@ color: #fff !important;
 .link:hover{
       text-decoration: underline;
 }
+
+//success style
+.background{
+      background-color: #e6f3f8;
+      color: $dark_bg;
+      height: 100vh;
+      min-height: 660px;
+      .background__flex{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1em;
+            margin: 0 auto;
+            max-width: 600px;
+            p{
+                  margin-top: 1em;
+                  margin-bottom: 1em;
+            }
+           
+            
+      }
+}
+
 
 @media (max-width: 576px) {
       .dim__form{

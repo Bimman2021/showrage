@@ -1,9 +1,10 @@
 .lmsf__cont {
-  background-color: inherit;
+  background-color: #000;
   background-image: url("../../../IMG/bg4.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
+  min-height: 667px;
   color: #fff !important;
 }
 .lmsf__cont .dim__form {
@@ -17,6 +18,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.kis8 {
+  line-height: 1.7;
 }
 
 .mg__left {
@@ -38,6 +43,26 @@
 
 .link:hover {
   text-decoration: underline;
+}
+
+.background {
+  background-color: #e6f3f8;
+  color: rgba(24, 23, 31, 0.8784313725);
+  height: 100vh;
+  min-height: 660px;
+}
+.background .background__flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  margin: 0 auto;
+  max-width: 600px;
+}
+.background .background__flex p {
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 @media (max-width: 576px) {

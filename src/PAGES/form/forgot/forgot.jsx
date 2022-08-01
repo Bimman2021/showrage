@@ -5,7 +5,7 @@ import logo from '../../../IMG/html5.png'
 import { faLock, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PillBtn from '../../../COMPONENTS/Button/PillBtn'
-import Switch from '../../../COMPONENTS/switch/Switch'
+import axios from '../../../REQUESTS/backend'
 import { Link } from 'react-router-dom';
 import '../login/style.css'
 
@@ -13,6 +13,7 @@ const Forgot = () => {
 
 
       const [error, setError] = useState({})
+      const [serverError, setServerError] = useState('')
       const initialValue = { email: '' }
       const [formvalue, setFormvalue] = useState(initialValue);
       const [loading, setLoading] = useState(false);
@@ -22,21 +23,29 @@ const Forgot = () => {
 
 
       //===
-      // const send = () => {
-      //       axios.post(url, {
-      //             action: 'login',
-      //             values: value
-      //       }).then(function (response) {
-      //             setLoading(false)
+      const send = () => {
+            const data = {
+                  method: 'POST',
+                  mode: 'no-cors',
+                  data: formvalue,
+                  headers: {
+                        'Access-Control-Allow-Origin': '*',
+                        'Content-Type': 'application/json',
+                  },
 
-      //       }).catch(function (error) {
-      //             console.log(error);
-      //       });
-      // }
+            }
+            axios('/account/forgot', data)
+                  .then(function (response) {
+                        console.log(response);
+                  })
+                  .catch(function (error) {
+                        console.log(error);
+                  });
+      }
       //===
       const onChange = (e) => {
             const { name, value } = e.target;
-            setFormvalue({ ...formvalue, [name]: value });
+            setFormvalue({ ...formvalue, [name]: value.toLowerCase() });
             setError({ ...error, [name]: '' })
 
       }
@@ -77,7 +86,9 @@ const Forgot = () => {
                               <div className='center__flex mg__2em'>
                                     <img src={logo} alt='' height={'auto'} width={'50px'} />
                               </div>
-
+                              <div className='error'>
+                                    {serverError}
+                              </div>
                               <Input
                                     label='email'
                                     icon={<FontAwesomeIcon icon={faEnvelope} className='form__icon' />}

@@ -7,36 +7,60 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PillBtn from '../../../COMPONENTS/Button/PillBtn'
 import Switch from '../../../COMPONENTS/switch/Switch'
 import { Link } from 'react-router-dom';
+import axios from '../../../REQUESTS/backend'
+import { useNavigate } from 'react-router-dom'
+import { useAuth } from '../../../AUTH/index'
 import '../login/style.css'
 
 const Register = () => {
-
-
+      const navigate = useNavigate();
+      const auth = useAuth()
       const [error, setError] = useState({})
+      const [serverError, setServerError] = useState('')
       const initialValue = { name: '', email: '', pass: '' }
       const [formvalue, setFormvalue] = useState(initialValue);
       const [loading, setLoading] = useState(false);
       const [isSubmit, setIsSubmit] = useState(false);
-      // const auth = useAuth();
-      // const navigate = useNavigate();
+      const send = () => {
+            const data = {
+                  method: 'POST',
+                  mode: 'no-cors',
+                  data: formvalue,
+                  headers: {
+                        'Access-Control-Allow-Origin': '*',
+                        'Content-Type': 'application/json',
+                  },
 
+            }
+            axios('/account/', data)
+                  .then(function (response) {
 
-      //===
-      // const send = () => {
-      //       axios.post(url, {
-      //             action: 'login',
-      //             values: value
-      //       }).then(function (response) {
-      //             setLoading(false)
+                        if (response.data === 'user already exist') {
+                              setServerError('user already exist try login')
+                              setLoading(false)
+                        }
+                        if (response.data.message === 'success register') {
+                              auth.setVerifyCode({
+                                    vcode: response.data.verificationCode,
+                                    email: response.data.email
+                              })
+                              setLoading(false)
+                              navigate('/verifyemail', { replace: true })
+                        }
+                        if (response.data.message === 'fail') {
+                              setServerError('something went wrong, please try again')
+                              setLoading(false)
+                        }
+                  })
+                  .catch(function (error) {
+                        alert('something went wrong try again')
+                        setLoading(false)
+                  });
+      }
 
-      //       }).catch(function (error) {
-      //             console.log(error);
-      //       });
-      // }
-      //===
       const onChange = (e) => {
             const { name, value } = e.target;
-            setFormvalue({ ...formvalue, [name]: value });
+            setFormvalue({ ...formvalue, [name]: value.toLowerCase() });
             setError({ ...error, [name]: '' })
 
       }
@@ -44,7 +68,7 @@ const Register = () => {
       useEffect(() => {
             if (Object.keys(error).length === 0 && isSubmit) {
                   setLoading(true)
-                  // send()
+                  send()
             }
       }, [error, isSubmit])
 
@@ -82,9 +106,11 @@ const Register = () => {
                   <Navbar />
                   <div className=''>
                         <form action="" className='dim__form' autoComplete='off' onSubmit={submit}>
+
                               <div className='center__flex mg__2em'>
                                     <img src={logo} alt='' height={'auto'} width={'50px'} />
                               </div>
+                              <div className='error'>{serverError}</div>
                               <Input
                                     label='name'
                                     name={'name'}

@@ -4,7 +4,7 @@ import React from 'react'
 import '../style.css'
 
 
-const Input = ({ type, label, icon, error, required, autocomplete, value, onChange, name }) => {
+const Input = ({ type, label, icon, error, required, autocomplete, value, onChange, name, }) => {
       return (
             <div>
                   <div className='form__control'>

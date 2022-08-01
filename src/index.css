@@ -18,6 +18,12 @@ body {
   text-decoration: none;
 }
 
+.error{
+  color: red !important;
+  text-align: center;
+  padding: 1em;
+}
+
 .css-ahj2mt-MuiTypography-root {
  
   color: #383340 !important;
