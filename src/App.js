@@ -19,6 +19,7 @@ import Verifyemail from "./PAGES/form/verifyEmail"
 import Success from "./PAGES/form/success/succes";
 import ValidateEmail from "./AUTH/authVerifyEmail";
 import Protected from "./AUTH/protected";
+import Payment from './PAGES/paymentPage/Payment'
 
 //
 import isOnline from 'is-online';
@@ -49,6 +50,7 @@ function App() {
       <Route path="/forgot" element={<Forgot />} />
       <Route path="/play" element={<Play />} />
       <Route path="/success" element={<Success />} />
+      <Route path="/payment" element={<Payment />} />
       <Route path="/verifyemail" element={
           <ValidateEmail>
             <Verifyemail />
