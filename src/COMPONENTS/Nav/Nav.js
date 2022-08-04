@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Nav.css";
-import logo from '../../IMG/rge.png'
+import logo from '../../IMG/wordlogo.svg'
 import {Button} from '@mui/material';
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

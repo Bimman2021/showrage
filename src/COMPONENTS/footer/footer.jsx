@@ -5,7 +5,7 @@ import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
 import GoogleIcon from '@mui/icons-material/Google';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
-import Logo from '../../IMG/logo.png'
+import Logo from '../../IMG/mainLogo.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './style.css'
 

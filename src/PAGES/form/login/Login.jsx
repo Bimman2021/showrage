@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import Navbar from '../../../COMPONENTS/Nav/Navbar'
 import Input from '../../../COMPONENTS/input/Input'
-import logo from '../../../IMG/html5.png'
+import logo from '../../../IMG/mainLogo.svg'
 import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import PillBtn from '../../../COMPONENTS/Button/PillBtn'
 import Switch from '../../../COMPONENTS/switch/Switch'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'
+import { Helmet } from 'react-helmet'
 import { useAuth } from '../../../AUTH'
 import axios from '../../../REQUESTS/backend'
 import './style.css'
@@ -48,7 +49,12 @@ const Login = () => {
                               auth.setUser({
                                     data
                               })
-                              navigate('/en/home', { replace: true })
+                              if (response.data.data.package === 'free') {
+                                    navigate('/en/plan', { replace: true })
+                              } else {
+                                    navigate('/en/home', { replace: true })
+                              }
+
                         } else if (response.data.message === 'verify mail') {
                               auth.setVerifyCode({
                                     vcode: response.data.verificationCode,
@@ -108,11 +114,16 @@ const Login = () => {
 
       return (
             <div className='lmsf__cont'>
+                  <Helmet>
+                        <title>Showrage || Login</title>
+                  </Helmet>
                   <Navbar />
                   <div className=''>
                         <form action="" className='dim__form' autoComplete='off' onSubmit={submit} >
-                              <div className='center__flex mg__2em'>
-                                    <img src={logo} alt='' height={'auto'} width={'50px'} />
+                              <div className='center__flex'>
+                                    <Link to='/'>
+                                          <img src={logo} alt='' height={'auto'} width={'50px'} />
+                                    </Link>
                               </div>
                               <div className='error'>
                                     {serverError}

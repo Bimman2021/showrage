@@ -1,12 +1,20 @@
 import React from 'react'
-import { Pricing_plan } from '../index/Index'
+import { PricingPlan } from '../index/Index'
 
-const plan = () => {
+const Compo = () => {
+
+  return (
+    <h1> you are on free plan</h1>
+  )
+}
+
+const Plan = () => {
+
   return (
     <div className=''>
-      <Pricing_plan />
+      <PricingPlan word={<Compo />} />
     </div>
   )
 }
 
-export default plan
+export default Plan

@@ -2,6 +2,7 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import logo from '../IMG/wordlogo.svg'
 import './style.css';
 
 const bgdrop = {
@@ -36,7 +37,7 @@ export default function OffCanvas({ showModal, setshowModal, component }) {
             variants={content}
           >
             <div className='header'>
-              <div>showRage</div>
+              <img src={logo} alt='logo' width={'70%'} />
 
               <FontAwesomeIcon icon={faTimes} className='icon' onClick={() => setshowModal(false)} />
             </div>

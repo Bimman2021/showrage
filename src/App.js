@@ -19,6 +19,7 @@ import Verifyemail from "./PAGES/form/verifyEmail"
 import Success from "./PAGES/form/success/succes";
 import ValidateEmail from "./AUTH/authVerifyEmail";
 import Protected from "./AUTH/protected";
+import Plan from './PAGES/plan/plan'
 import Payment from './PAGES/paymentPage/Payment'
 
 //
@@ -43,14 +44,14 @@ function App() {
       <Route path="/" element={<Index />} />
       <Route path="/*" element={<Page404 />} />
       <Route path="/subscribe" element={<Subscribe />} />
-      <Route path="/profile" element={<Profile />} />
+      
       <Route path="/list" element={<Mylist />} />
       <Route path="/Test" element={<Test />} />
       <Route path="/season" element={<Season />} />
       <Route path="/forgot" element={<Forgot />} />
       <Route path="/play" element={<Play />} />
       <Route path="/success" element={<Success />} />
-      <Route path="/payment" element={<Payment />} />
+     
       <Route path="/verifyemail" element={
           <ValidateEmail>
             <Verifyemail />
@@ -68,13 +69,20 @@ function App() {
                   </React.Suspense>
                 }
               />
+          <Route path="profile" element={<Profile />} />
+          <Route path="plan" element={<Plan />} />
+          <Route path="payment">
+            <Route path=":idPackage" element={<Payment />} />
+     
+          </Route>
+          {/* <Route path="payment/:package" element={<Payment />} /> */}
       </Route>
 
       <Route path="/animation" element={<Animation />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/reg" element={<List />} />    
-       <Route path="/info" element={
+      <Route path="/info" element={
         <Validate>
        <Info />
        </Validate>

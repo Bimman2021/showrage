@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import Navbar from '../../../COMPONENTS/Nav/Navbar'
 import Input from '../../../COMPONENTS/input/Input'
-import logo from '../../../IMG/html5.png'
+import logo from '../../../IMG/mainLogo.svg'
 import { faLock, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PillBtn from '../../../COMPONENTS/Button/PillBtn'
 import Switch from '../../../COMPONENTS/switch/Switch'
 import { Link } from 'react-router-dom';
+import { Helmet } from "react-helmet";
 import axios from '../../../REQUESTS/backend'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../../../AUTH/index'
@@ -103,12 +104,17 @@ const Register = () => {
 
       return (
             <div className='lmsf__cont'>
+                  <Helmet>
+                        <title>Showrage || Join</title>
+                  </Helmet>
                   <Navbar />
                   <div className=''>
                         <form action="" className='dim__form' autoComplete='off' onSubmit={submit}>
 
-                              <div className='center__flex mg__2em'>
-                                    <img src={logo} alt='' height={'auto'} width={'50px'} />
+                              <div className='center__flex '>
+                                    <Link to='/'>
+                                          <img src={logo} alt='' height={'auto'} width={'50px'} />
+                                    </Link>
                               </div>
                               <div className='error'>{serverError}</div>
                               <Input

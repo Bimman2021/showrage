@@ -1,33 +1,46 @@
 import React from "react"
 import Footer from "../../COMPONENTS/footer/footer"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import PillBtn from "../../COMPONENTS/Button/PillBtn"
+//import { useAuth } from '../../AUTH/index'
+import logo from '../../IMG/wordlogo.svg'
 import { Button } from "@mui/material"
 import deviceImg from '../../IMG/device.png'
 import SimpleAccordion from '../../COMPONENTS/accordion/accordion'
-import CookieConsent, { Cookies, getCookieConsentValue } from "react-cookie-consent";
+import CookieConsent from "react-cookie-consent";
+//{ Cookies, getCookieConsentValue } 
 import './style.css'
 
-export function Pricing_plan() {
+export function PricingPlan({ word }) {
+
+
+
       return (
             <div className="img__bg">
                   <div className="container">
                         <div className="row push">
                               <div className="col-4">
-                                    <div className="pricePlan__cont">
-                                          <h1 className="pricePlan__h1">Pricing plan</h1>
-                                          <p className="pricePlan__p">
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quisquam amet atque dolor itaque minima aspernatur minus magnam obcaecati eaque!
-                                                Select a plan right for you. choose a package that suit you at affordable price you can't get anywhere</p>
+                                    {
+                                          word ? (
+                                                word
+                                          ) : (
+                                                <div className="pricePlan__cont">
+                                                      <h1 className="pricePlan__h1">Pricing plan</h1>
+                                                      <p className="pricePlan__p">
+                                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quisquam amet atque dolor itaque minima aspernatur minus magnam obcaecati eaque!
+                                                            Select a plan right for you. choose a package that suit you at affordable price you can't get anywhere</p>
 
-                                    </div>
+                                                </div>
+                                          )
+                                    }
+
                               </div>
                               <div className="col pad__side-15">
                                     <div className="row nowrap">
                                           <div className="price1">
                                                 <div className="price__head">
                                                       <h4>standard package</h4>
-                                                      <h1>$ 20.00</h1>
+                                                      <h1>&#x20A6; 200.00</h1>
 
                                                 </div>
                                                 <div className="price__body">
@@ -41,13 +54,13 @@ export function Pricing_plan() {
                                                       </ul>
 
                                                 </div>
-                                                <button className="btn__choose">Choose plan</button>
+                                                <Link to={'/en/payment/standard'} className="btn__choose">Choose plan</Link>
 
                                           </div>
                                           <div className="price1 price2">
                                                 <div className="price__head">
                                                       <h4>Premium package</h4>
-                                                      <h1>$ 50.00</h1>
+                                                      <h1>&#x20A6; 500.00</h1>
 
                                                 </div>
                                                 <div className="price__body">
@@ -61,7 +74,7 @@ export function Pricing_plan() {
                                                       </ul>
 
                                                 </div>
-                                                <button className="btn__choose">Choose plan</button>
+                                                <Link to={'/en/payment/premium'} className="btn__choose">Choose plan</Link>
 
                                           </div>
                                     </div>
@@ -76,13 +89,13 @@ export function Pricing_plan() {
 
 const Index = () => {
       const navigate = useNavigate()
-      //console.log(getCookieConsentValue());
+
       return (
             <div>
                   <nav className="in__nav">
                         <div className="logo">
-                              {/* <img src={require('../../IMG/logo.png')} width='100px' height={'auto'} alt="" /> */}
-                              <h3><i>Show</i>Rage</h3>
+                              <img src={logo} width='150px' height={'auto'} alt="" />
+                              {/* <h3><i>Show</i>Rage</h3> */}
                         </div>
                         <Button href='/login' variant="contained" sx={{
                               fontFamily: 'Alegreya Sans SC', background: '#b2b4bf', color: '#383340', '&:hover': {
@@ -104,7 +117,7 @@ const Index = () => {
                               </div>
                         </div>
                   </div>
-                  <Pricing_plan />
+                  <PricingPlan />
                   <section className="faq__section">
                         <div className="container">
                               <div className="row">
@@ -126,7 +139,7 @@ const Index = () => {
                         location="bottom"
                         buttonText="I understand"
                         cookieName="user"
-                        style={{ background: "#2B373B", textTransform: 'lowercase' }}
+                        style={{ background: "#2B373B", textTransform: 'lowercase', maxWidth: '700px' }}
                         buttonStyle={{ backgroundColor: "#b2b4bf", fontSize: "14px", padding: '.8em', borderRadius: '4px' }}
                         expires={150}
                         debug={true}

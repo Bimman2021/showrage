@@ -98,9 +98,6 @@ const Modal = ({ showModal, setShowModal, component, nav, style }) => {
               </span>
             </div>
 
-
-
-
             {component}
 
           </motion.div>
