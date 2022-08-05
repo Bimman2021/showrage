@@ -106,6 +106,7 @@ const Register = () => {
             <div className='lmsf__cont'>
                   <Helmet>
                         <title>Showrage || Join</title>
+                        <meta name="theme-color" content="#c12528" />
                   </Helmet>
                   <Navbar />
                   <div className=''>

@@ -116,6 +116,7 @@ const Login = () => {
             <div className='lmsf__cont'>
                   <Helmet>
                         <title>Showrage || Login</title>
+                        <meta name="theme-color" content="#c12528" />
                   </Helmet>
                   <Navbar />
                   <div className=''>

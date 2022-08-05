@@ -9,6 +9,7 @@ import deviceImg from '../../IMG/device.png'
 import SimpleAccordion from '../../COMPONENTS/accordion/accordion'
 import CookieConsent from "react-cookie-consent";
 //{ Cookies, getCookieConsentValue } 
+import { Helmet } from 'react-helmet'
 import './style.css'
 
 export function PricingPlan({ word }) {
@@ -92,6 +93,11 @@ const Index = () => {
 
       return (
             <div>
+                  <Helmet>
+                        <meta name="theme-color" content="#b2b4bf" />
+                        <title>showrage</title>
+
+                  </Helmet>
                   <nav className="in__nav">
                         <div className="logo">
                               <img src={logo} width='150px' height={'auto'} alt="" />
