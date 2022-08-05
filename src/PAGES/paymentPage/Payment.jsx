@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams, useNavigate, Navigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { usePaystackPayment } from 'react-paystack';
 import { Helmet } from 'react-helmet'
 import Page404 from '../404page/Page404'
@@ -9,24 +9,24 @@ import './style.css'
 
 
 
-// you can call this function anything
-const onSuccess = (reference) => {
-
-      // Implementation for whatever you want to do with reference and after success call.
-      window.location.replace = '/en/home'
-      console.log(reference);
-};
-
-// you can call this function anything
-const onClose = () => {
-      // implementation for  whatever you want to do when the Paystack dialog closed.
-      console.log('closed')
-}
 
 const PaystackHookExample = () => {
-
-      let { idPackage } = useParams()
+      const navigate = useNavigate()
+      const { idPackage } = useParams()
       let price = 0
+
+
+      const onSuccess = (reference) => {
+
+            navigate('/en/home', { replace: true })
+            console.log(reference);
+      };
+
+      const onClose = () => {
+            console.log('closed')
+      }
+
+      //starts checking url params    
       if (idPackage === 'standard') {
             price = 20000
       }
@@ -56,7 +56,7 @@ const PaystackHookExample = () => {
 };
 
 function Payment() {
-      const navigate = useNavigate()
+      // const navigate = useNavigate()
       const { idPackage } = useParams()
       let price = 0
       if (idPackage === 'standard') {
