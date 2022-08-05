@@ -71,7 +71,7 @@ function Payment() {
       return (
             <div className="">
                   <Helmet>
-                        <title>payment || plan || showrage</title>
+                        <title>payment | plan | showrage</title>
                         <meta name="theme-color" content="#b2b4bf" />
                   </Helmet>
                   <div className="App__back">

@@ -22,10 +22,11 @@
   margin-top: .5em;
 }
 .img__ont{
-  background-image: url('../../IMG/logo.png');
+  background-image: url('../../IMG/greylogo.png');
   background-size: cover;
-  background-position: center;
+  background-position: left;
   /* filter: grayscale(100%); */
+  background-repeat: no-repeat;
   height: 141px;
   width: 250px;
 }
