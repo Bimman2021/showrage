@@ -1,4 +1,4 @@
-import { faBars, faUser } from '@fortawesome/free-solid-svg-icons'
+import { faBars, } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useState } from 'react'
 //import Avatar from '@mui/material/Avatar';
@@ -36,13 +36,19 @@ function NavLinkss({ className }) {
 
                   <ul className={`${className && className} ul__ca`} >
                         <li className='li__ca'>
-                              <NavLink className='link' to='/home' >home</NavLink>
+                              <NavLink className='link' to='/en/home' >home</NavLink>
                         </li>
                         <li className='li__ca'>
-                              <NavLink className='link' to='/profile' >profile</NavLink>
+                              <NavLink className='link' to='/en/search' > search </NavLink>
+                        </li>
+                        <li className='li__ca'>
+                              <NavLink className='link' to='/en/profile' >profile</NavLink>
                         </li>
                         <li className='li__ca'>
                               <NavLink className='link' to='/list' >my list</NavLink>
+                        </li>
+                        <li className='li__ca'>
+                              <NavLink className='link' to='/notification' >Notification</NavLink>
                         </li>
 
                   </ul >

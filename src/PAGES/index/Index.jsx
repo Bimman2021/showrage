@@ -3,6 +3,7 @@ import Footer from "../../COMPONENTS/footer/footer"
 import { Link, useNavigate } from "react-router-dom"
 import PillBtn from "../../COMPONENTS/Button/PillBtn"
 //import { useAuth } from '../../AUTH/index'
+import TawkMessengerReact from '@tawk.to/tawk-messenger-react';
 import logo from '../../IMG/wordlogo.svg'
 import { Button } from "@mui/material"
 import deviceImg from '../../IMG/device.png'
@@ -21,20 +22,21 @@ export function PricingPlan({ word }) {
                   <div className="container">
                         <div className="row push">
                               <div className="col-4">
-                                    {
-                                          word ? (
-                                                word
-                                          ) : (
-                                                <div className="pricePlan__cont">
-                                                      <h1 className="pricePlan__h1">Pricing plan</h1>
-                                                      <p className="pricePlan__p">
-                                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quisquam amet atque dolor itaque minima aspernatur minus magnam obcaecati eaque!
-                                                            Select a plan right for you. choose a package that suit you at affordable price you can't get anywhere</p>
+                                    <div className="pricePlan__cont">
+                                          {
+                                                word ? (
+                                                      word
+                                                ) : (
+                                                      <div>
+                                                            <h1 className="pricePlan__h1">Pricing plan</h1>
+                                                            <p className="pricePlan__p">
+                                                                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quisquam amet atque dolor itaque minima aspernatur minus magnam obcaecati eaque!
+                                                                  Select a plan right for you. choose a package that suit you at affordable price you can't get anywhere</p>
+                                                      </div>
 
-                                                </div>
-                                          )
-                                    }
-
+                                                )
+                                          }
+                                    </div>
                               </div>
                               <div className="col pad__side-15">
                                     <div className="row nowrap">
@@ -95,9 +97,12 @@ const Index = () => {
             <div>
                   <Helmet>
                         <meta name="theme-color" content="#b2b4bf" />
-                        <title>showrage</title>
+                        <title>Showrage Nigeria - Watch TV Shows Online, Watch Movies Online</title>
 
                   </Helmet>
+                  <TawkMessengerReact
+                        propertyId="62e3567b37898912e9602cf7"
+                        widgetId="1g940jla8" />
                   <nav className="in__nav">
                         <div className="logo">
                               <img src={logo} width='150px' height={'auto'} alt="" />

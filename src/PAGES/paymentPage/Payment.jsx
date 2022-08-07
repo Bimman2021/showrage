@@ -4,7 +4,7 @@ import { usePaystackPayment } from 'react-paystack';
 import { Helmet } from 'react-helmet'
 import Page404 from '../404page/Page404'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { fapa, faCreditCard } from '@fortawesome/free-solid-svg-icons';
+import { faCreditCard } from '@fortawesome/free-solid-svg-icons';
 import './style.css'
 
 

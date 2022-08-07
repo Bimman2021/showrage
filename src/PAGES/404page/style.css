@@ -1,0 +1,7 @@
+.bg__404{
+      background-image: url('../../IMG/404_page.gif');
+      min-height: 100vh;
+      background-size: cover;
+      background-repeat: no-repeat;
+      filter: grayscale('8px');
+}

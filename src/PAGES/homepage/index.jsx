@@ -3,6 +3,7 @@ import Row from "../../COMPONENTS/Row/Row";
 import requests from "../../REQUESTS/requests";
 import Banner from "../../COMPONENTS/Banner/Banner";
 import Nav from "../../COMPONENTS/Nav/Nav";
+import { Helmet } from 'react-helmet'
 import Navbar from "../../COMPONENTS/Nav/Navbar";
 import Footer from "../../COMPONENTS/footer/footer";
 //import Section2 from "../../COMPONENTS/section/section2";
@@ -10,6 +11,10 @@ import Footer from "../../COMPONENTS/footer/footer";
 function Home() {
       return (
             <div className="Home" style={{ overflowX: 'hidden' }}>
+                  <Helmet>
+                        <title>Showrage Nigeria - Watch TV Shows Online, Watch Movies Online</title>
+                        <meta name="theme-color" content="#b2b4bf" />
+                  </Helmet>
                   {/* Nav bar */}
                   {/* <Nav /> */}
                   <Navbar />

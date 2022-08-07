@@ -1,0 +1,41 @@
+.mg_T_B{
+      margin: 4rem auto;
+      max-width: 80%;
+}
+
+.movies{
+      display: flex;
+      flex-wrap: wrap;
+}
+.single__smn{
+      flex-basis: 18.5%;
+      margin-right: .8em;
+      margin-bottom: .8em;
+}
+.title__movie{
+      padding: 1em;
+}
+.search__span{
+      text-transform: lowercase;
+      color: #3D58F3;
+}
+.single__smn .image{
+      width: 100%;
+      object-fit: contain;
+}
+.css-1sumxir-MuiFormLabel-root-MuiInputLabel-root{
+      font-family: inherit !important;
+      color: inherit !important;
+}
+.css-md26zr-MuiInputBase-root-MuiOutlinedInput-root{
+      font-family: inherit !important;
+      color: inherit !important;
+ 
+}
+
+@media only screen and (max-width: 576px) {
+      .mg_T_B{
+            margin: 2rem auto;
+            max-width: 100%;
+      }
+}

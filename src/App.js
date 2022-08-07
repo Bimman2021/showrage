@@ -2,6 +2,7 @@ import React from "react";
 import Index from './PAGES/index/Index';
 import { Routes, Route } from "react-router-dom";
 //import Home from './homepage/index';
+import Search from './PAGES/search/search'
 import Page404 from "./PAGES/404page/Page404";
 import Login from './PAGES/form/login/Login'
 import Register from './PAGES/form/register/register'
@@ -71,6 +72,7 @@ function App() {
               />
           <Route path="profile" element={<Profile />} />
           <Route path="plan" element={<Plan />} />
+          <Route path="search" element={<Search />} />
           <Route path="payment">
             <Route path=":idPackage" element={<Payment />} />
      

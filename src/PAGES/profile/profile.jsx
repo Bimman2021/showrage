@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Nav from '../../COMPONENTS/Nav/Nav'
+import Navbar from '../../COMPONENTS/Nav/Navbar'
 import './style.css'
 
 const Profile = () => {
       return (
             <div>
-                  <Nav />
+                  <Navbar />
 
                   <div className='cont__profile'>
                         <div className='flex'>
